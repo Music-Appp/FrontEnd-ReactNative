@@ -23,9 +23,7 @@ export default function TabTwoScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 30 }}>{data}</Text>
-      <button onClick={() => hanldeClickCuong()}>click hello Cuong</button>
-      <button onClick={() => hanldeClickDat()}>click hello Dat</button>
+      <Text>{data}</Text>
     </View>
   );
 }

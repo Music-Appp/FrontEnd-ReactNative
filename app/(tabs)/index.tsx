@@ -1,13 +1,19 @@
-import { StyleSheet } from 'react-native';
+import{ StyleSheet } from 'react-native';
 import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import{ Text, View } from '@/components/Themed';
 import { useEffect, useState } from 'react';
 import Album from '@/components/ALBUM';
+import SongPlayer from '@/components/PlaySong/SongPlayer';
+import TrackPlayer from 'react-native-track-player';
 
 export default function TabOneScreen() {
-  const [album, setAlbum] = useState<string[] | undefined>();
+  const [album setAlbum] = useState<string[] | undefined>();
   const [song, setSong] = useState<string[] | undefined>();
   const [singer, setSinger] = useState<string[] | undefined>();
+
+  const [songUrl, setSongUrl] = useState('')
+  const [username, setUsername] = useState('')
+
 
   useEffect(() => {
     setAlbum(['YEU 5', 'DIEU TUYET VOI', 'MOI NGAY MOT NIEM VUI', 'CHUNG TA LA CUA NHAU', 'YEU 5', 'DIEU TUYET VOI', 'MOI NGAY MOT NIEM VUI', 'CHUNG TA LA CUA NHAU', 'YEU 5', 'DIEU TUYET VOI', 'MOI NGAY MOT NIEM VUI', 'CHUNG TA LA CUA NHAU']);
@@ -25,6 +31,8 @@ export default function TabOneScreen() {
         <Text style={styles.title}>Singer</Text>
         <Album listAlbum={singer} />
       </View>
+      <SongPlayer songUrl={songUrl} />
+
     </View>
   );
 }
