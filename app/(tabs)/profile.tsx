@@ -40,7 +40,7 @@ export default function HomeScreen() {
         <Text style={styles.contentText}>Age: {age}</Text>
         <TouchableHighlight
           style={styles.changeButton}
-          underlayColor="yellow" // Màu nền khi button được nhấn
+          underlayColor="pink" // Màu nền khi button được nhấn
           onPress={() => {
             // Xử lý sự kiện khi button được nhấn
           }}
@@ -49,7 +49,7 @@ export default function HomeScreen() {
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.logoutButton}
-          underlayColor="yellow" // Màu nền khi button được nhấn
+          underlayColor="pink" // Màu nền khi button được nhấn
           onPress={() => {
             // Xử lý sự kiện khi button được nhấn
           }}
