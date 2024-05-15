@@ -63,16 +63,12 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
-    position:'absolute',
-    bottom: 190,
   },
 
   button: {
     backgroundColor: '#39FF14', // Màu nền của button
     padding: 10, // Khoảng cách từ nội dung button đến viền button
     borderRadius: 5, // Góc bo viền button
-    bottom: -125,
-    
   },
 
   buttonText: {
