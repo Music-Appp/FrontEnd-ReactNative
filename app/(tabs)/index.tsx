@@ -7,6 +7,10 @@ import Album from '@/components/ALBUM';
 export const BACKGROUND_IMAGE_URL = '../assets/images/background.jpg'
 export const LOGO_IMAGE_URL = '../assets/images/logo.jpg'
 
+const buttonData = [
+  { text: 'LOGIN', onPress: () => console.log('LOGIN pressed') },
+  { text: 'SIGN UP', onPress: () => console.log('SIGN UP pressed') },
+];
 
 export default function HomeScreen() {
   return (
@@ -18,22 +22,27 @@ export default function HomeScreen() {
         style={styles.container}
         imageStyle={styles.backgroundImage}
       >
-        <Text style={styles.titleText}>Welcome to our app!</Text>
+        <Text style={styles.titleText}>Welcome to our app! 
+        Enjoy your music
+        </Text>
         <Image
           source={{
             uri: LOGO_IMAGE_URL,
           }}
           style={styles.image}
         />
-        <TouchableHighlight
-          style={styles.button}
-          underlayColor="yellow" // Màu nền khi button được nhấn
-          onPress={() => {
-            // Xử lý sự kiện khi button được nhấn
-          }}
-        >
-          <Text style={styles.buttonText}>LOGIN</Text>
-        </TouchableHighlight>
+        <View style={styles.buttonsContainer}>
+          {buttonData.map((button, index) => (
+            <TouchableHighlight
+              key={index}
+              style={styles.button}
+              underlayColor="yellow"
+              onPress={button.onPress}
+            >
+              <Text style={styles.buttonText}>{button.text}</Text>
+            </TouchableHighlight>
+          ))}
+        </View>
       </ImageBackground>
     </View>
   );
@@ -46,9 +55,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   titleText: {
-    fontSize: 35,
-    color: '#39FF14',
+    fontSize: 30,
+    color: 'black',
     textAlign: 'center',
     fontFamily: 'sans-serif',
     fontWeight: 'bold',
@@ -61,14 +71,24 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 100,
-    height: 100,
+    bottom: -5,
+    width: 125,
+    height: 125,
   },
 
   button: {
-    backgroundColor: '#39FF14', // Màu nền của button
-    padding: 10, // Khoảng cách từ nội dung button đến viền button
-    borderRadius: 5, // Góc bo viền button
+    backgroundColor: '#39FF14',
+    padding: 5,
+    borderRadius: 5, 
+    borderColor: 'black',
+    borderWidth: 2,
+  },
+
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    
   },
 
   buttonText: {
@@ -77,5 +97,4 @@ const styles = StyleSheet.create({
     fontFamily: 'sans-serif',
     fontWeight: 'bold',
   },
-
 });
