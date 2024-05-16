@@ -1,6 +1,6 @@
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-import { Image, Button, TextInput,TouchableOpacity, StyleSheet, TouchableHighlight } from 'react-native';
+import { Image, Button,TouchableOpacity, StyleSheet, TouchableHighlight } from 'react-native';
 import { useEffect, useState } from 'react';
 import Album from '@/components/ALBUM';
 import React from 'react';
