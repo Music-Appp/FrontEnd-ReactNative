@@ -1,0 +1,69 @@
+.pencil-box {
+    border: 2px solid #999;
+    /* Adjust thickness and color as needed */
+    border-radius: 5px;
+    /* Adjust roundness as needed */
+    box-shadow: 0 0 2px #ccc;
+    /* Add a subtle shadow for depth */
+}
+
+.pencil-box:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px dashed #666;
+    /* Adjust dash size and color as needed */
+    border-radius: 5px;
+    /* Match the box's border-radius */
+    z-index: -1;
+    /* Ensure the dashed line is behind the main border */
+}
+
+.sketch-border {
+    border-width: 20px;
+    /* Điều chỉnh độ rộng của viền */
+    border-image: url(./src/border.png) 30 fill / 30px / 30px space;
+    /* Đường dẫn và thuộc tính của hình ảnh nét vẽ */
+    padding: 10px;
+    /* Tuỳ chọn: Thêm một số padding cho nội dung */
+    background-color: #f0f0f0;
+    /* Tuỳ chọn: Đặt màu nền cho phần tử */
+}
+
+.wave-border {
+    position: relative;
+    padding: 20px;
+    /* Optional: Add padding to the content */
+    background-color: #f0f0f0;
+    /* Optional: Set a background color for the element */
+}
+
+.wave-border::before,
+.wave-border::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    /* Adjust the height of the wave */
+    background-color: #000;
+    /* Adjust the color of the wave */
+    transform-origin: bottom;
+}
+
+.wave-border::before {
+    transform: scaleY(0.6) translateX(-50%);
+    border-radius: 50% 50% 0 0;
+}
+
+.wave-border::after {
+    transform: scaleY(0.6) translateX(50%);
+    border-radius: 50% 50% 0 0;
+}
+
+.test {
+    color: #f6e05f;
+}
